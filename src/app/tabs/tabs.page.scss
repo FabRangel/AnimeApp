@@ -1,1 +1,9 @@
-
+.mytoolbar {
+    border-radius: 25px 25px 0% 0%  !important;
+    --background: #222428 !important;
+    border-top: 2px solid red !important;
+    color: whitesmoke !important;;
+}
+.active ion-icon{
+    --ion-color-base: white !important;
+}
