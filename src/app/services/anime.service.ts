@@ -20,5 +20,9 @@ export class AnimeService {
   getCharactersById(id:string){
     return this.http.get(`${APIURL}anime/${id}/characters`);
   }
+
+  searchAnime(valor: string){
+    return this.http.get(`${APIURL}anime?q=${valor}`);
+  }
   
 }
