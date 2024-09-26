@@ -17,10 +17,12 @@ import { CardAnimeComponent } from '../components/card-anime/card-anime.componen
 })
 export class Tab2Page {
   encontrados:any[] = [];
+  sinData = false;
   constructor(private animeS: AnimeService) {
     addIcons({searchCircleOutline,close, arrowBack,heartOutline,heart});
   }
   buscar(evento:any){
+    this.sinData = true;
     console.log(evento.detail.value);
     this.animeS.searchAnime(evento.detail.value).subscribe((resp:any) =>{
       console.log(resp);

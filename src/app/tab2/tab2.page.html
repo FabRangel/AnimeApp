@@ -8,10 +8,24 @@
         <ion-col sizeXs="6" sizeSm="3" sizeMd="3" sizeLg="2" >
           <app-card-anime [anime]="item"></app-card-anime>
         </ion-col>
-      } @empty {
-        <ion-text class="ion-text-center" color="light">
-          <h1>No hay resultados para la búsqueda</h1>
-        </ion-text>
+      }
+      @if (!sinData) {
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col offset="3" size="6" class="ion-text-center">
+              <h1  class="mensajito">¡Busca tu ánime favorito!</h1>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      }
+      @if (sinData && encontrados.length===0) {
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col offset="3" size="6" class="ion-text-center">
+              <h1 class="mensajito">¡No hay resultados para tu búsqueda!</h1>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
       }
     </ion-row>
   </ion-grid>
