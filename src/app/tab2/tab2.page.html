@@ -4,7 +4,7 @@
   <ion-searchbar color="light" cancelButtonIcon="close" placeholder="Busca tu ánime favorite" (ionInput)="buscar($event)" [debounce]="250" ></ion-searchbar>
   <ion-grid>
     <ion-row>
-      @for (item of encontrados; track $index) {
+      @for (item of encontrados; track item.mal_id) {
         <ion-col sizeXs="6" sizeSm="3" sizeMd="3" sizeLg="2" >
           <app-card-anime [anime]="item"></app-card-anime>
         </ion-col>

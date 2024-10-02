@@ -6,11 +6,14 @@ import { Injectable } from '@angular/core';
 export class FavoritesService {
   favorites: any = [];
   constructor() { 
-    this.getLocalFavorites();
+    this.getLocalFavorites;
   }
-  getLocalFavorites() {
+  get getLocalFavorites() {
     this.favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
     return this.favorites;
+  }
+  inFavorite(id: any){
+    return !!this.favorites.find((a: any) => a.mal_id === id);
   }
   addFavorite(anime: any) {
     const found = this.favorites.find((a:any) => a.mal_id === anime.mal_id);
@@ -24,4 +27,5 @@ export class FavoritesService {
     this.favorites.push(anime);
     localStorage.setItem('favorites', JSON.stringify(this.favorites));
   }
+  
 }

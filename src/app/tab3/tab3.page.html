@@ -3,7 +3,7 @@
 <ion-content [fullscreen]="true" >
     <ion-grid>
         <ion-row>
-          @for (item of favorites; track $index) {
+          @for (item of favorites; track item.mal_id) {
             <ion-col sizeXs="6" sizeSm="3" sizeMd="3" sizeLg="2">
               <app-card-anime [anime]="item"></app-card-anime>
             </ion-col>

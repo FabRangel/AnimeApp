@@ -1,6 +1,6 @@
 <ion-card class="card-anime ">
   <ion-button color="danger" class="card-fav" fill="clear" (click)="addToFavorites(anime)">
-    <ion-icon size="large" color="danger" slot="icon-only" name="heart-outline"></ion-icon>
+    <ion-icon size="large" color="danger" slot="icon-only" [name]="inFavorite(anime.mal_id)"></ion-icon>
   </ion-button>
   <img (click)="verDetalles(anime.mal_id)" class="img-anime" [src]="anime.images.jpg.image_url">
   <p class="card-title">

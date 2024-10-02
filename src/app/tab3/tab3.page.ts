@@ -15,9 +15,11 @@ import { heartOutline } from 'ionicons/icons';
   imports: [IonCol, IonRow, IonGrid, ToolbarComponent,IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent,  CardAnimeComponent],
 })
 export class Tab3Page {
-  favorites:any[] = [];
   constructor(private favoriteS: FavoritesService) {
     addIcons({heartOutline});
-    this.favorites = this.favoriteS.getLocalFavorites();
+    this.favorites;
+  }
+  get favorites(){
+    return this.favoriteS.getLocalFavorites;
   }
 }

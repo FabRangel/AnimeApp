@@ -23,6 +23,13 @@ export class CardAnimeComponent  implements OnInit {
     this.favoriteS.addFavorite(anime);
   }
   
+  inFavorite(id:any){
+    if(this.favoriteS.inFavorite(id)){
+      return 'heart'
+    }else{
+      return 'heart-outline'
+    }
+  }
   ngOnInit() {}
 
 }
